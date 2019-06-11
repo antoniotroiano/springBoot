@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Spring-Boot-MVC-Thymeleaf-Webanwendung</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+
+<body onload='document.f.text.focus();'>
+
+    <hr />
+    <h2>Spring-Boot-MVC-Thymeleaf-Webanwendung</h2>
+    <hr />
+    <h3>Erstelle neues Datenelement</h3>
+    <form name='f' method="POST">
+        <input type="hidden" th:if="${_csrf}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <label for="text">Te®xt des neuen Datenelements:</label>
+        <input type="text" name="text" size="30" />
+        <input type="submit" />
+    </form>
+    <hr />
+    <h3>Gespeicherte Datenelemente</h3>
+    <div th:if="${#lists.isEmpty( entitiesListe )}">
+        <p>Keine Datenelemente vorhanden.</p>
+    </div>
+    
+    <div th:unless="${#lists.isEmpty( entitiesListe )}">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Datum</th>
+                <th>Text</th>
+            </tr>
+            <tr th:each="me : ${entitiesListe}">
+                <td th:text="${me.id}">Id</td>
+                <td th:text="${me.datum}">Datum</td>
+                <td th:text="${me.text}">Text</td>
+            </tr>
+        </table>
+    </div>
+    <hr/>
+</body>
+</html>
