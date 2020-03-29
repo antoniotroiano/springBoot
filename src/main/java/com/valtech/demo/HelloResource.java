@@ -1,6 +1,5 @@
 package com.valtech.demo;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
@@ -13,12 +12,6 @@ public class HelloResource {
     public HelloResource(DataRepository repository) {
         this.repository = repository;
     }
-
-    /*private static List<Data> name = new ArrayList<Data>();
-
-    static {
-        name.add(new Data());
-    }*/
 
     @GetMapping("/home")
     public String homePage(Model model) {
@@ -45,11 +38,4 @@ public class HelloResource {
     public String sayHello() {
         return "hello";
     }
-
-    /*@PostMapping("/addSomething")
-    public void saveSomething() {
-        String name = data.
-
-    }*/
-
 }

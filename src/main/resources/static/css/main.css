@@ -1,0 +1,35 @@
+.hello-gestaltungUeberschrift {
+    color: darkgreen;
+}
+
+/*Für Tabelle*/ 
+.table {
+    display: table;
+    box-shadow: 0 10px 18px -5px #888888;
+    border-collapse: collapse;
+    background-color: azure;
+    width: 50%;
+    margin: 1em auto;
+    padding: 1em;
+}
+
+.rowh {
+    display: table-row;
+    padding: 1em;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+}
+
+.row {
+    display: table-row;
+}
+
+.row:hover {
+    /*cursor: pointer;*/
+    background-color: aquamarine;
+}
+
+.cell {
+    display: table-cell;
+    padding: 0.5em;
+}
